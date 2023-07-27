@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { MainLayout } from "../layouts/main.layout";
+import { Job } from "../data/job.entity";
+import SimpleJobCard from "../components/jobs/simple.job.card";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const featureJobs = [
+  const featureJobs: Job[] = [
     {
       title: "Admin Operation",
       companyName: "PT Surya",
@@ -40,31 +43,8 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <MainLayout>
       {/* Header Navbar */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="flex justify-between">
-          {/* Logo */}
-          <div className="flex items-center py-10 pl-5">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWGOSL7M9SjcnXPZzhAoaoHeuqovTraxTshAqccnxc&s"
-              alt="Logo"
-              className="h-12"
-            />
-          </div>
-
-          <div className="flex items-center gap-4 pr-5">
-            <button>Untuk Kandidat</button>
-            <button>Untuk Perusahaan</button>
-            <button className="text-violet-900 border-2 border-violet-900 px-3 py-2 rounded-md">
-              Login
-            </button>
-            <button className="text-violet-900 border-2 border-violet-900 px-3 py-2 rounded-md">
-              Daftar
-            </button>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="bg-violet-900 text-white h-64 flex items-center">
@@ -103,36 +83,12 @@ export default function Home() {
         <section className="flex flex-row w-full mt-10 gap-4">
           {/* Job Card */}
           {featureJobs.map((job) => (
-            <div
-              className="flex w-1/4 border-2 border-blue-200 shadow-md rounded-md p-6 hover:cursor-pointer hover:shadow-xl"
-              key={job.title}
-            >
-              <div className="flex flex-col justify-between">
-                {/* Job Title */}
-                <div>
-                  <h2 className="text-xl font-bold text-violet-500">
-                    {job.title}
-                  </h2>
-                  {/* Company Name */}
-                  <h4 className="text-md">{job.companyName}</h4>
-                </div>
-
-                <div className="mt-5">
-                  {/* Job Location */}
-                  <h4 className="font-semibold">{job.location}</h4>
-                  {/* Job Salary */}
-                  <h4 className="font-semibold">{job.salary}</h4>
-                </div>
-
-                <div className="mt-5">
-                  {/* Job Type */}
-                  <button className="px-3 py-1 bg-[#E60378] text-white rounded-lg">
-                    {job.type}
-                  </button>
-                  {/* Job Posting Date */}
-                  <h4 className="text-gray-500 mt-5">{job.date}</h4>
-                </div>
-              </div>
+            <div key={job.title} className="w-1/4">
+              <SimpleJobCard
+                key={job.title}
+                data={job}
+                onClick={() => console.log("home")}
+              />
             </div>
           ))}
         </section>
@@ -149,6 +105,6 @@ export default function Home() {
       {/* Footer */}
 
       {/* Floating Button */}
-    </>
+    </MainLayout>
   );
 }
