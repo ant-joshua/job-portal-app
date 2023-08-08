@@ -46,14 +46,15 @@ export default function Jobs() {
     setFeatureJobs(data?.data ?? []);
   }, [data?.data]);
 
-  if (isLoading) return <div>Loading...</div>;
 
-  if (error) return <div>Error...</div>;
+
+  // if (error) return <div>Error...</div>;
 
   return (
     <MainLayout>
       <section className="flex flex-row w-full mt-10 gap-4">
         {/* Job Card */}
+        {isLoading && <div>Loading...</div>}
         {featureJobs.map((job) => (
           <div key={job.title} className="w-1/4">
             <SimpleJobCard
