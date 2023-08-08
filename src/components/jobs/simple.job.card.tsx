@@ -40,7 +40,7 @@ export default function SimpleJobCard(
         <div className="mt-5">
           {/* Job Type */}
           <button className="px-3 py-1 bg-[#E60378] text-white rounded-lg">
-            {data?.type}
+            {data?.job_types}
           </button>
           {/* Job Posting Date */}
           <h4 className="text-gray-500 mt-5">{data?.date}</h4>

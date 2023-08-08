@@ -13,7 +13,7 @@ export default function Home() {
       companyName: "PT Surya",
       location: "Bekasi, Jawa Barat",
       salary: "Rp. 5.000.000 - Rp. 10.000.000",
-      type: "Full Time",
+      // type: "Full Time",
       date: "Posted 2 days ago",
     },
     {
@@ -21,7 +21,7 @@ export default function Home() {
       companyName: "PT Indah",
       location: "Jakarta, DKI Jakarta",
       salary: "Rp. 10.000.000 - Rp. 15.000.000",
-      type: "Full Time",
+      // type: "Full Time",
       date: "Posted 2 days ago",
     },
     {
@@ -29,7 +29,7 @@ export default function Home() {
       companyName: "PT Indopasifik Teknologi Medika Indonesia",
       location: "Jakarta, DKI Jakarta",
       salary: "Rp. 10.000.000 - Rp. 15.000.000",
-      type: "Full Time",
+      // type: "Full Time",
       date: "Posted 2 days ago",
     },
     {
@@ -37,7 +37,7 @@ export default function Home() {
       companyName: "PT Indopasifik Teknologi Medika Indonesia",
       location: "Jakarta, DKI Jakarta",
       salary: "Rp. 10.000.000 - Rp. 15.000.000",
-      type: "Full Time",
+      // type: "Full Time",
       date: "Posted 2 days ago",
     },
   ];
