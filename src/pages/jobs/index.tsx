@@ -9,7 +9,7 @@ import { ArbeitnowPaginationResponse } from "../../repository/arbeitnow.api";
 import { useQuery } from "react-query";
 
 export async function getJobs() {
-  const fetchData = await fetch("https://arbeitnow.com/api/job-board-api");
+  const fetchData = await fetch("http://localhost:3001/jobs");
   const response = (await fetchData.json()) as ArbeitnowPaginationResponse;
 
   const mappedData: Job[] = response.data.map((item) => {
