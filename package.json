@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@tanstack/react-query-next-experimental": "^5.0.0-alpha.80",
     "@types/node": "20.4.4",
     "@types/react": "18.2.16",

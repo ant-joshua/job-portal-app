@@ -12,8 +12,11 @@ export async function getJobs() {
   const fetchData = await fetch("http://localhost:3001/jobs");
   const response = (await fetchData.json()) as ArbeitnowPaginationResponse;
 
+  console.log("response: ", response)
+
   const mappedData: Job[] = response.data.map((item) => {
     return {
+      id: item.id,
       title: item?.title,
       companyName: item.company_name,
       location: item.location,
@@ -45,6 +48,11 @@ export default function Jobs() {
   useEffect(() => {
     setFeatureJobs(data?.data ?? []);
   }, [data?.data]);
+
+
+  useEffect(() => {
+    console.log("halo")
+  }, []);
 
 
 

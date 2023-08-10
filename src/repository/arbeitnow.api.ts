@@ -7,6 +7,7 @@ export interface ArbeitnowPaginationResponse {
 }
 
 export interface ArbeitData {
+  id?: string;
   slug?: string;
   company_name?: string;
   title?: string;
